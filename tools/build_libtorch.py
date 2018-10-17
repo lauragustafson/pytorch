@@ -30,10 +30,11 @@ if __name__ == '__main__':
         command.append('--use-cudnn')
     if USE_GLOO_IBVERBS:
         command.append('--use-gloo-ibverbs')
+
+    command.append('caffe2')
     if USE_DISTRIBUTED:
         command.append('gloo')
         command.append('c10d')
-    command.append('caffe2')
 
     sys.stdout.flush()
     sys.stderr.flush()
