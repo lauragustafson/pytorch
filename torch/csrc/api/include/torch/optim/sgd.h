@@ -44,8 +44,8 @@ class SGD : public Optimizer {
 
   std::vector<Tensor> momentum_buffers;
 
- private:
   SGD() : options(0) {}
+ private:
 
   /// Counts how often `step()` is called, for dampening.
   size_t iteration_{0};

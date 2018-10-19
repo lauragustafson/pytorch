@@ -52,8 +52,8 @@ class LBFGS : public LossClosureOptimizer {
   int64_t func_evals{0};
   int64_t state_n_iter{0};
 
- private:
   LBFGS() : options(0) {}
+ private:
 
   Tensor gather_flat_grad();
   void add_grad(const torch::Tensor& step_size, const Tensor& update);

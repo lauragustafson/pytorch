@@ -44,8 +44,8 @@ class Adagrad : public Optimizer {
   std::vector<Tensor> sum_buffers;
   std::vector<int64_t> step_buffers;
 
- private:
   Adagrad() : options(0) {}
+ private:
 
   template <typename Self, typename Archive>
   static void serialize(Self& self, Archive& archive) {
