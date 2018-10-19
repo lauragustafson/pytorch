@@ -6,7 +6,7 @@ import sys
 
 from setup_helpers.cuda import USE_CUDA
 from setup_helpers.cudnn import USE_CUDNN
-from setup_helpers.dist_check import USE_DISTRIBUTED, USE_GLOO_IBVERBS
+from setup_helpers.dist_check import USE_DISTRIBUTED, USE_GLOO_IBVERBS, IS_LINUX
 
 if __name__ == '__main__':
     # Placeholder for future interface. For now just gives a nice -h.
@@ -32,7 +32,7 @@ if __name__ == '__main__':
         command.append('--use-gloo-ibverbs')
 
     command.append('caffe2')
-    if USE_DISTRIBUTED:
+    if USE_DISTRIBUTED and IS_LINUX:
         command.append('gloo')
         command.append('c10d')
 
